@@ -1,0 +1,25 @@
+nav{
+    display: flex;
+    background-color: rgb(85, 85, 235);
+    justify-content: flex-end;
+    padding: 1.5rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 6px 37px -4px rgba(0,0,0,0.56);
+}
+
+h1{
+    margin: 20px;
+}
+
+.nav_option{
+    color: aliceblue;
+    font-weight: 800;
+    margin-right: 20px;
+}
+
+.nav_option_reg{
+    color: aliceblue;
+    font-weight: 800;
+    margin-right: 20px;
+}
+

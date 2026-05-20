@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/register.css">
+    <title>Login</title>
+</head>
+<body>
+
+<main>
+    <section class="section-full-height">
+
+
+        <form class="form" th:action="@{/login}" th:method="POST" th:object="${newUser}">
+
+            <!--      <h3>Register Here</h3>-->
+
+            <!--      <label for="username">Username</label>-->
+            <input type="text" placeholder="Username" id="username" th:field="*{username}" required>
+            <p class="alert-warning" th:text="${usernameAlreadyExistMessage}"></p>
+
+            <!--      <label for="password">Password</label>-->
+            <input type="password" placeholder="Password" id="password" th:field="*{password}" required>
+            <p class="alert-warning" th:if="${errorMessage}" th:text="${errorMessage}"></p>
+
+
+            <button>Login</button>
+            <p class="form-already">Don't have an account? <a th:href="@{/register}">Register now</a>!</p>
+
+        </form>
+
+    </section>
+</main>
+
+</body>
+</html>

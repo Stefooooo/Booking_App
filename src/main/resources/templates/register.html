@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="/css/register.css">
+  <title>Register</title>
+</head>
+<body>
+
+<main>
+  <section class="section-full-height">
+
+
+    <form class="form" th:action="@{/register}" th:method="POST" th:object="${newUser}">
+
+<!--      <h3>Register Here</h3>-->
+
+<!--      <label for="username">Username</label>-->
+      <input type="text" placeholder="Username" id="username" th:field="*{username}" required>
+      <p class="alert-warning" th:text="${usernameAlreadyExistMessage}"></p>
+
+<!--      <label for="password">Password</label>-->
+      <input type="password" placeholder="Password" id="password" th:field="*{password}" required>
+      <p class="alert-warning" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+
+<!--      <label for="email">Email</label>-->
+      <input type="email" placeholder="Email" id="email" th:field="*{email}" required>
+      <p class="alert-warning" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+
+      <button>Register</button>
+      <p class="form-acc-exist">Already have an account? <a th:href="@{/login}">Login here</a>!</p>
+
+    </form>
+
+  </section>
+</main>
+
+</body>
+</html>
